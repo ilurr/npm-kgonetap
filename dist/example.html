@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+	
+		<title>KGOneTap</title>
+	
+		<link rel="preload" href="https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	
+		<style>
+		@font-face {
+			font-family: 'Roboto';
+			font-display: swap;
+			font-style: normal;
+			font-weight: 400;
+			src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		@font-face {
+			font-family: 'Roboto';
+			font-display: swap;
+			font-style: normal;
+			font-weight: 700;
+			src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		
+		</style>
+	
+		<link href="./asset/css/kgonetap.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body style="min-height: 190vh;"> 
+
+		<section class="kgmModal -hide -otbottom" id="kgmModal-onetap">
+			<div class="kgmModal-block">
+				<div class="kgmModal-header">
+					<div class="kgmModal-header-inner">
+						<div class="kgmModal-header-logo">
+							<img src="https://dummy.kompas.com/repo/kgmedia/html/asset/images/logo/logo-kompascom.svg" alt="">
+						</div>
+						<button type="button" onclick="oneTapHide();return false;" class="kgmModal-close"></button>
+					</div>
+				</div>
+				<div class="kgmModal-body">
+					<div class="kgmModal-title" id="kgmModal-title">Login untuk memaksimalkan pengalaman baca Kompas.com</div>
+		
+					<div class="kgmModal-onetap">
+						<!-- google -->
+						<div class="form-google" id="kgOne1">
+								<div id="g_id_onload"
+										data-client_id="776828813358-infk4sje3q07sa8mg8n6lq1mk2pdkkua.apps.googleusercontent.com"
+										data-context="signin"
+										data-ux_mode="popup"
+										data-login_uri="https://account.kompas.com/social/user"
+										data-itp_support="true">
+								</div>
+								
+								<div class="g_id_signin"
+										data-type="standard"
+										data-shape="rectangular"
+										data-theme="filled_blue"
+										data-text="continue_with"
+										data-size="large"
+										data-logo_alignment="left">
+								</div>
+						</div>
+					</div>
+		
+					<div class="kgmModal-divider -clean"><span>atau</span></div>
+					<div class="kgmModal-method">
+						<a href="https://dummy.kompas.com/repo/kgmedia/html/index.html">Gunakan metode lain</a>
+					</div>
+				</div>
+				<div class="kgmModal-footer">
+					<div class="kgmModal-info">Dengan login, kamu menyetujui <a href="https://www.kgmedia.id/legal-privacy-id" target="_blank">Kebijakan Data Pribadi</a></div>
+				</div>
+			</div>
+		</section>
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
+	
+	<style>
+	/* untuk panduan alur dummy silakan hapus di prod */
+	.form-google > * {
+		pointer-events: none;
+	}
+	</style>
+
+	<script>
+    function oneTapShow(tipe='') {
+			let otd = document.getElementById('kgmModal-onetap')
+			if(!!otd) {
+				otd.classList.remove('-hide');
+				document.body.classList.add('-locked');
+				window.removeEventListener('scroll', scrollOTS);
+			}
+    }
+    function oneTapHide() {
+			let otd = document.getElementById('kgmModal-onetap')
+			if(!!otd) {
+				otd.classList.add('-hide');
+				document.body.classList.remove('-locked');
+			}
+    }
+    function scrollOTS() {
+			oneTapShow();
+    }
+    window.addEventListener('scroll', scrollOTS);
+
+		document.getElementById('kgOne1').addEventListener('click', function(e){
+			oneTapHide()
+		})
+
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,62 @@
+@import 'default/vars';
+@import 'mixin/grid';
+@import 'mixin/grid-framework';
+@import 'mixin/mixin';
+
+// base project
+@import 'base/vars';
+
+@font-face {
+	font-family: 'Roboto';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'Roboto';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 700;
+	src: url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// @import 'layout/global';
+// .kgmModal {
+// 	@import 'component/label';
+// 	@import 'component/form';
+// }
+.kgmModal,
+.kgmModal *,
+.kgmModal *:before,
+.kgmModal *:after {
+    box-sizing: border-box
+}
+.kgmModal.kgmModal-cookie {
+	z-index: 9999999999;
+}
+// darkmode
+@import 'darkmode/setting';
+@import 'darkmode/var_light';
+@import 'darkmode/var_dark';
+@import 'darkmode/root';
+body {
+	@include vars-light-v2();
+}
+body.theme-dark {
+	@include vars-dark-v2();
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		@include vars-dark-v2();
+	}
+	body.theme-light {
+		@include vars-light-v2();
+	}
+}
+
+@import 'component/modal';
+@import 'widget/onetap';

@@ -1,0 +1,17 @@
+<div class="form-row{{#eq nolabel compare="true"}}{{else}} form-input{{/eq}}">
+	{{#eq nolabel compare="true"}}
+	{{else}}
+	<label for="{{name}}">{{label}}</label>
+	{{/eq}}
+	{{#if txterror}}
+	<div class="form-error">{{txterror}}</div>
+	{{/if}}
+	<div class="form-select" data-placeholder="{{placeholder}}">
+		<select id="{{name}}" name="{{name}}" class="form-el {{#if txterror}}error{{/if}}{{#if function}} {{function}}{{/if}} "{{#eq required compare="true"}} required="required"{{/eq}}{{#eq disabled compare="true"}} disabled="disabled"{{/eq}}>
+			<option value="0" selected="selected" disabled="disabled">{{placeholder}}</option>
+			{{#each (split option ",") as |item|}}
+			<option value="{{item}}">{{item}}</option>
+			{{/each}}
+		</select>
+	</div>
+</div>

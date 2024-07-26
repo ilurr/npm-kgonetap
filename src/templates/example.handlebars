@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	{{>head}}
+
+	<body style="min-height: 190vh;"> 
+
+		{{>kgonetap hide="hide" page="onetap" pos="otbottom" path="." modalLogo="https://dummy.kompas.com/repo/kgmedia/html/asset/images/logo/logo-kompascom.svg" modalTxt="Login untuk memaksimalkan pengalaman baca Kompas.com" modalMethod=true}}
+	
+	<style>
+	/* untuk panduan alur dummy silakan hapus di prod */
+	.form-google > * {
+		pointer-events: none;
+	}
+	</style>
+
+	<script>
+    function oneTapShow(tipe='') {
+			let otd = document.getElementById('kgmModal-onetap')
+			if(!!otd) {
+				otd.classList.remove('-hide');
+				document.body.classList.add('-locked');
+				window.removeEventListener('scroll', scrollOTS);
+			}
+    }
+    function oneTapHide() {
+			let otd = document.getElementById('kgmModal-onetap')
+			if(!!otd) {
+				otd.classList.add('-hide');
+				document.body.classList.remove('-locked');
+			}
+    }
+    function scrollOTS() {
+			oneTapShow();
+    }
+    window.addEventListener('scroll', scrollOTS);
+
+		document.getElementById('kgOne1').addEventListener('click', function(e){
+			oneTapHide()
+		})
+
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,12 @@
+<div class="form-row form-input">
+    <div class="form-radio">
+        <input type="radio" name="{{name}}" id="{{id}}" value="" {{#eq disabled compare="true" }} disabled="disabled" class="form-el"
+            {{/eq}}{{#eq readonly compare="true" }} readonly="readonly" {{/eq}}{{#eq checked compare="true" }}
+            checked="checked" {{/eq}}>
+        <label for="{{id}}">
+            {{#if label}}
+            {{{label}}}
+            {{/if}}
+        </label>
+    </div>
+</div>

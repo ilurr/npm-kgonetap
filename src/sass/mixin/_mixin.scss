@@ -1,0 +1,94 @@
+// default transisi
+@mixin transition($arg) {
+	-webkit-transition: $arg;
+	-moz-transition: $arg;
+	-ms-transition: $arg;
+	-o-transition: $arg;
+	transition: $arg;
+}
+@mixin transform($arg) {
+	-webkit-transform: $arg;
+	-moz-transform: $arg;
+	-ms-transform: $arg;
+	-o-transform: $arg;
+	transform: $arg;
+}
+@mixin animation($arg) {
+	-webkit-animation: $arg;
+	-moz-animation: $arg;
+	-ms-animation: $arg;
+	-o-animation: $arg;
+	animation: $arg;
+}
+// border radius
+@mixin border-radius($x) {
+	-webkit-border-radius: $x;
+	-moz-border-radius: $x;
+	-ms-border-radius: $x;
+	-o-border-radius: $x;
+	border-radius: $x;
+}
+// form
+@mixin reset-appearance {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+	box-shadow: none;
+}
+// reset style ul
+@mixin reset-ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+// 100%
+@mixin display-full {
+	width: 100%;
+	height: 100%;
+}
+// flexbox 
+@mixin display-flex {
+	// display: -webkit-box;
+	// display: -ms-flexbox;
+	// display: -webkit-flex; 
+	display: flex;
+}
+@mixin display-inline-flex {
+	// display: -webkit-box;
+	// display: -ms-flexbox;
+	// display: -webkit-inline-flex;
+	display: inline-flex;
+}
+// untuk overflow judul pada list berita
+@mixin title-overflow($height, $max-height) {
+	height: $height;
+	max-height: $max-height;
+	overflow: hidden;
+}
+// media
+@mixin max-responsive ($media) {
+	@media (max-width: $media) { @content; }
+}
+@mixin min-responsive ($media) {
+	@media (min-width: $media) { @content; }
+}
+@mixin range-responsive ($media, $media2) {
+	@media (min-width: $media) and (max-width: $media2) { @content; }
+}
+// placeholder
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+// font template
+@mixin font-pack($family: false, $size: false, $weight: false,  $lh: false, $colour: false) {
+    @if $family { font-family: $family; }
+    @if $size { font-size: $size; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+    @if $colour { color: $colour; }
+}

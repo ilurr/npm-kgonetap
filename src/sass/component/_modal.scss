@@ -1,0 +1,350 @@
+.kgm {
+    &Modal {
+        font-size: 16px;
+        position: fixed;
+        z-index: 99999;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .2);
+        padding: 16px;
+        @include display-flex();
+        justify-content: center;
+        align-items: center;
+
+        @include min-responsive($screen-tablet) {
+            // top: 25px;
+            // right: 25px;
+            // width: 320px;
+            // height: auto;
+            // background: transparent;
+            // padding: 0;
+
+            &.-full {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                background: rgba(0, 0, 0, .6);
+                padding: 16px;
+            }
+        }
+
+        &.-hide {
+            visibility: hidden;
+            opacity: 0;
+            // position: absolute;
+            // top: 90%;
+            // height: 0;
+            // overflow: hidden;
+            display: none;
+        }
+
+        & &-close {
+            display: flex;
+            // margin-left: auto;
+            // margin-right: unset;
+            // margin-bottom: -5px;
+            color: $color-grey-1;
+			width: 28px;
+			height: 28px;
+            position: relative;
+            // right: -10px;
+            // top: -10px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath fill='%23000' d='M13.067 12.183a.625.625 0 0 1-.884.884L7 7.884l-5.183 5.183a.625.625 0 0 1-.884-.884L6.116 7 .933 1.817a.625.625 0 1 1 .884-.884L7 6.116 12.183.933a.625.625 0 1 1 .884.884L7.884 7l5.183 5.183Z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center center;
+            filter: var(--ot-filter-2);
+            // background-image: url("data:image/svg+xml,%3Csvg id='close_black_24dp_7_' data-name='close_black_24dp (7)' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath id='Path_1417' data-name='Path 1417' d='M0,0H24V24H0Z' fill='none'/%3E%3Cpath id='Path_1418' data-name='Path 1418' d='M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89A1,1,0,0,0,7.11,18.3L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12,18.3,7.11A1,1,0,0,0,18.3,5.71Z' fill='%23909090'/%3E%3C/svg%3E%0A");
+
+            &:hover {
+                background-color: transparent;
+                // background-image: url("data:image/svg+xml,%3Csvg id='close_black_24dp_7_' data-name='close_black_24dp (7)' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath id='Path_1417' data-name='Path 1417' d='M0,0H24V24H0Z' fill='none'/%3E%3Cpath id='Path_1418' data-name='Path 1418' d='M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89A1,1,0,0,0,7.11,18.3L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12,18.3,7.11A1,1,0,0,0,18.3,5.71Z' fill='%23DDDDDD'/%3E%3C/svg%3E%0A");
+                border: none;
+                // filter: opacity(.6);
+            }
+        }
+
+        // global override
+        & *,
+        & *:before,
+        & *:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        & a {
+            text-decoration: none
+        }
+        & .button {
+            font-family: $font-primary;
+        }
+
+        @import 'component/button';
+        @import 'component/button_theme';
+
+        // component
+        &-block {
+            position: relative;
+            border-radius: 8px;
+            background: var(--bg-modal);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+            padding: 1.375em;
+            overflow: hidden;
+
+            @include min-responsive($screen-middle) {
+                width: 320px;
+            }
+
+            // @include min-responsive($screen-tablet) {
+            //     width: auto;
+            // }    
+        }
+
+        // &.kgmModal-cookie {
+        //     padding: 8px;
+        // }
+
+        // &.-bottom {
+        //     // bottom: 0;
+        //     top: 0;
+        //     // left: 0;
+        //     right: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     // background: rgba(0, 0, 0, 0.6);
+        //     // padding: 0;
+        //     // justify-content: flex-end;
+        //     align-items: flex-end;
+        //     @media (min-width: 768px) {
+        //         align-items: center;
+        //     }
+        //     .kgmModal-block {
+        //         padding: 24px 16px;
+        //         margin: 0 -16px -16px;
+        //         width: 100vw;        
+        //         border-radius: 16px 16px 0 0;
+        //         @media (min-width: 768px) {
+        //             padding: 15px;
+        //             margin: 0;
+        //             border-radius: 8px;
+        //         }
+        //         @media (min-width: 1100px) {
+        //             padding: 15px calc((100% - 1100px + 30px) / 2);
+        //         }
+        //     }
+        // }
+		&.-bottom,
+		&.-otbottom {
+			@include max-responsive($screen-tablet) {
+				justify-content: flex-end;
+				align-items: flex-end;
+				padding: 0;
+			
+			
+				.kgmModal {
+					&-block {
+						transition: all 100ms;
+						//transform: translateY(-20rem);
+						border-radius: 8px 8px 0 0;
+					}
+			
+					// &-header {
+					// 	height: 50px;
+					// 	&-logo {
+					// 		display: none;
+					// 	}
+					// }
+			
+					// &-close {
+					// 	position: absolute;
+					// 	background-image: url("data:image/svg+xml,%3Csvg width='56' height='4' viewBox='0 0 56 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='56' height='4' rx='2' fill='%23000'/%3E%3C/svg%3E%0A");
+					// 	background-size: 56px auto ;
+					// 	width: 100px;
+					// 	top: -24px;
+					// 	left: 0;
+					// 	right: 0;
+					// 	margin: auto;
+					// }
+				}
+			}
+		}
+
+        &-header {
+            position: relative;
+            margin: -1.375em -1.375em 0;
+            padding: 1.375em 1.375em 0;
+            @include display-flex();
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &-inner {
+                position: relative;
+                width: 100%;
+                @include display-flex();
+                justify-content: space-between;
+                align-items: center;
+                height: 28px;
+            }
+
+            &-logo {
+                width: 100%;
+                max-width: 250px;
+                height: 100%;
+                padding: 6px 0;
+
+                img {
+                    height: 100%;
+                    filter: var(--img-modal-gray);
+                    object-fit: contain;
+                }
+            }
+        }
+
+        &-body {
+            position: relative;
+            padding: 0;
+
+            &>p {
+                margin: 1.375em 0;
+                @include font-pack($font-primary, 0.875em, 400, 1.4, var(--cl-modal-black));
+            }
+        }
+
+        &-title {
+            position: relative;
+            margin: .125em 0;
+            @include font-pack($font-primary, 1.25em, 700, 1, var(--cl-modal-black));
+        }
+
+        &-id {
+            position: relative;
+            margin: .125em 0;
+            @include font-pack($font-primary, .875em, 400, 1.25em, var(--cl-modal-dark));
+        }
+
+        &-img {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin: 16px 0;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                // filter: var(--img-modal-gray);
+            }
+        }
+
+        &-lead {
+            position: relative;
+            margin: -16px 0;
+            padding: 0 16px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            color: var(--ot-txt2);
+            text-align: center;
+        }
+
+        &-reg {
+            position: relative;
+            @include font-pack($font-primary, 12px, 400, 16.8px, var(--ot-txt2));
+            text-align: center;
+            margin-bottom: 8px;
+            span {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                color: #007AFF;
+            }
+        }
+
+        &-method {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            @include font-pack($font-primary, 16px, 400, 22.4px, false);
+            a {
+                color: #007AFF;
+                text-decoration: underline;
+            }
+        }
+
+        &-divider {
+            position: relative;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            span {
+                position: relative;
+                display: inline-block;
+                padding: 0 10px;
+                vertical-align: middle;
+                background: var(--bg-modal);
+                z-index: 1;
+                @include font-pack($font-primary, 12px, 400, 16.8px, var(--ot-txt4));
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 50%;
+                left: 0;
+                width: 100%;
+                border-bottom: 1px solid var(--form-line-grey);
+            }
+            &.-clean {
+                margin: -12px 0;
+                &:after {
+                    content: none;
+                }
+            }
+        }
+
+        &-footer {
+            position: relative;
+            @include display-flex();
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 -.250em;
+
+            .form-row {
+                flex-grow: 1;
+                padding: 0 0.250em;
+
+                &-big {
+                    width: 100%;
+                }
+            }
+
+            .link {
+                text-decoration: none;
+                vertical-align: baseline;
+                border: 0;
+                @include font-pack($font-primary, false, 700, 1.4, false);
+                @include transition(all .2s ease);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

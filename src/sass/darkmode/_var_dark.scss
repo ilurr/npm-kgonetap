@@ -1,0 +1,46 @@
+@mixin vars-dark {
+	--btn-bg: #454545;
+	--btn-bg2: #757575;
+	--btn-br: #E2E2E2;
+	--btn-cl: #{$color-fg-dark};
+	--btn-cl2: #E2E2E2;
+	--btn-bg-disabled: #454545;
+    --btn-cl-disabled: #666;
+	--btn-bg-default: #454545;
+	--btn-bg-default-hover: #454545;
+	--btn-br-default: transparent;
+	--btn-cl-default: #fff;
+}
+@mixin vars-modal-dark {
+    --bg-modal: #333333;
+    --bg-modal-header: #{$bg-dark-level-2};
+    --cl-modal-black: #{$color-fg-dark};
+    --cl-modal-dark: #{$color-fg-dark};
+    --cl-modal-gray: #{$color-fg-dark};
+    --cl-modal-btn: #{$color-fg-dark};
+    --img-modal-gray: grayscale(1) invert(1) brightness(1.2);
+}
+@mixin vars-dark-v2 {
+    --text-dark-grey: #fff;
+    --text-grey: #fff;
+    --darker-grey-v-1: #fff;
+    --darker-grey-v-2: #fff;
+    --bg-modal-header2: #222222;
+    --grey-lightest: #454545;
+    --azure: #fff;
+    --azure-v2: #999;
+    --azure-v3: #222;
+    --azure-v4: #fff;
+    --form-line-grey: #454545;
+    --day-sub-text: #fff;
+    --Azure-white: #333;
+    --Azure-white2: #444;
+    --Azure-lighter: #999;
+    --Azure-lightest: #222;
+    --Grey-Lightest: #D0D5DD;
+    --Green-crayola-lightest: #454545;
+    --Bright-yellow-lightest: #454545;
+    --Platinum-light: #222;
+    --filter-azure: invert(100%) sepia(93%) saturate(0%) hue-rotate(319deg) brightness(108%) contrast(106%);
+    --filter-cal-arrow: invert(100%) sepia(93%) saturate(0%) hue-rotate(319deg) brightness(108%) contrast(106%);
+}

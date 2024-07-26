@@ -1,0 +1,9 @@
+$color-bg-dark: #121212;
+$color-fg-dark: rgba(#fff, .87);
+
+$bg-dark-level-0half: lighten($color-bg-dark, 5%);
+$bg-dark-level-1: lighten($color-bg-dark, 8%);
+$bg-dark-level-1half: lighten($color-bg-dark, 10%);
+$bg-dark-level-2: lighten($color-bg-dark, 16%);
+$bg-dark-level-2half: lighten($color-bg-dark, 18%);
+$bg-dark-level-3: lighten($color-bg-dark, 32%);

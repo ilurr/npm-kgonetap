@@ -1,0 +1,68 @@
+<section class="kgmModal{{#if type}} -{{type}}{{/if}}{{#if hide}} -{{hide}}{{/if}}{{#if layout}} -{{layout}}{{/if}}{{#if pos}} -{{pos}}{{/if}}" id="kgmModal-{{page}}">
+	<div class="kgmModal-block">
+		<div class="kgmModal-header">
+			<div class="kgmModal-header-inner">
+				{{#if modalLogo}}
+				<div class="kgmModal-header-logo">
+					<img src="{{modalLogo}}" alt="">
+				</div>
+				{{/if}}
+				<button type="button" onclick="oneTapHide();return false;" class="kgmModal-close"></button>
+			</div>
+		</div>
+		<div class="kgmModal-body">
+			{{#if modalImg}}
+			<div class="kgmModal-img">
+					<img src="{{modalImg}}" alt="">
+			</div>
+			{{/if}}
+			{{#if modalTxt}}
+			<div class="kgmModal-title" id="kgmModal-title">{{modalTxt}}</div>
+			{{/if}}
+			{{#if modalLead}}
+			<div class="kgmModal-lead">{{modalLead}}</div>
+			{{/if}}
+			{{#if modalDivider}}
+			<div class="kgmModal-divider"><span>Masuk untuk aktivasi</span></div>
+			{{/if}}
+
+			<div class="kgmModal-onetap">
+				<!-- google -->
+				<div class="form-google" id="kgOne1">
+						<div id="g_id_onload"
+								data-client_id="776828813358-infk4sje3q07sa8mg8n6lq1mk2pdkkua.apps.googleusercontent.com"
+								data-context="signin"
+								data-ux_mode="popup"
+								data-login_uri="https://account.kompas.com/social/user"
+								data-itp_support="true">
+						</div>
+						
+						<div class="g_id_signin"
+								data-type="standard"
+								data-shape="rectangular"
+								data-theme="filled_blue"
+								data-text="continue_with"
+								data-size="large"
+								data-logo_alignment="left">
+						</div>
+				</div>
+			</div>
+
+			{{#if modalMethod}}
+			<div class="kgmModal-divider -clean"><span>atau</span></div>
+			<div class="kgmModal-method">
+				<a href="https://dummy.kompas.com/repo/kgmedia/html/index.html">Gunakan metode lain</a>
+			</div>
+			{{/if}}
+			{{#if modalReg}}
+			<div class="kgmModal-reg">
+				<a href="#">Daftar KG Media ID?</a> <span>atau</span> <a href="#">Login dengan Email</a>
+			</div>
+			{{/if}}
+		</div>
+		<div class="kgmModal-footer">
+			<div class="kgmModal-info">Dengan login, kamu menyetujui <a href="https://www.kgmedia.id/legal-privacy-id" target="_blank">Kebijakan Data Pribadi</a></div>
+		</div>
+	</div>
+</section>
+<script src="https://accounts.google.com/gsi/client" async defer></script>

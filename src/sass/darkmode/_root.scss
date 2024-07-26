@@ -1,0 +1,20 @@
+body {
+	@include vars-light();
+	@include vars-modal-light();
+}
+
+body.theme-dark {
+	@include vars-dark();
+	@include vars-modal-dark();
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		@include vars-dark();
+		@include vars-modal-dark();
+	}
+	body.theme-light {
+		@include vars-light();
+		@include vars-modal-light();
+	}
+}

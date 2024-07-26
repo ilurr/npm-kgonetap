@@ -1,0 +1,13 @@
+<div class="form-row{{#eq nolabel compare="true"}}{{else}} form-input{{/eq}}{{#if url}} form-url{{/if}}"{{#if parent}} id="{{parent}}"{{/if}}>
+	{{#eq nolabel compare="true"}}
+	{{else}}
+	<label for="{{name}}">{{label}}{{#if sublabel}} <span>{{sublabel}}</span>{{/if}}</label>
+	{{/eq}}
+	{{#if txterror}}
+	<div class="form-error">{{{txterror}}}</div>
+	{{/if}}
+	<input type="{{type}}" id="{{name}}" name="{{name}}" class="form-el {{#if txterror}}error{{/if}}{{#if function}} {{function}}{{/if}}" placeholder="{{placeholder}}"{{#eq type compare="number"}} min="{{min}}" max="{{max}}"{{/eq}}{{#eq required compare="true"}} required="required"{{/eq}}{{#eq disabled compare="true"}} disabled="disabled"{{/eq}}{{#eq readonly compare="true"}} readonly="readonly"{{/eq}}{{#if txtVal}} value="{{txtVal}}"{{/if}}>
+	{{#if icon}}
+	<button type="button" class="form-{{icon}} icon-{{icon}} js-{{icon}}">{{#if img}}<img src="./asset/images/icon-{{icon}}.png" alt="{{icon}}">{{/if}}</button>
+	{{/if}}
+</div>
