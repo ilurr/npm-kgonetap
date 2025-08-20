@@ -7,7 +7,10 @@
 					<img src="{{modalLogo}}" alt="">
 				</div>
 				{{/if}}
+				{{#if noclose}}
+				{{else}}
 				<button type="button" onclick="oneTapHide();return false;" class="kgmModal-close"></button>
+				{{/if}}
 			</div>
 		</div>
 		<div class="kgmModal-body">
