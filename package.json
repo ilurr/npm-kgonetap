@@ -1,6 +1,6 @@
 {
   "name": "kgonetap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modal login for KG Media site",
   "main": "index.js",
   "scripts": {
